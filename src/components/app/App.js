@@ -2,10 +2,11 @@ import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { StateProvider } from './State';
 import { TopBar } from '../navigation/TopBar';
+import * as ROUTES from '../../constants/routes';
 import LandingPage from '../landing/Landing';
 import HomePage from '../home/Home';
 import AdminPage from '../admin/Admin';
-import * as ROUTES from '../../constants/routes';
+import Reader from '../reader/Reader';
 
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
 
         <Route exact path={ROUTES.LANDING} component={LandingPage} />
         <Route path={ROUTES.HOME} component={HomePage} />
+        <Route path={ROUTES.READER} component={Reader} />
         <Route path={ROUTES.ADMIN} component={AdminPage} />
       </Router>
     </StateProvider>
