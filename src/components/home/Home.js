@@ -2,6 +2,9 @@ import React from 'react';
 import { Container, Grid, Card, CardHeader, CardContent, Typography, makeStyles, CardActions, Button } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
+  container: {
+    marginTop: 8,
+  },
   cardHeader: {
     backgroundColor:
       theme.palette.type === 'light' ? theme.palette.grey[200] : theme.palette.grey[700],
@@ -47,7 +50,7 @@ export default function Home(props) {
   }
   
   return (
-    <Container maxWidth="md" component="main">
+    <Container maxWidth="md" className={classes.container}>
         <Grid container spacing={5} alignItems="flex-end">
           {items.map((item) => (
             <Grid item key={item.title} xs={12} sm={6} md={4} lg={3}>
