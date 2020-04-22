@@ -1,5 +1,8 @@
-import React from 'react';
-import { Container, Grid, Typography, makeStyles } from '@material-ui/core';
+import React, { useEffect, useState } from 'react';
+import { Container, Typography, makeStyles } from '@material-ui/core';
+import { useParams } from 'react-router-dom';
+import { getStory } from '../api/Story';
+import Markdown from './markdown/Markdown';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -21,11 +24,24 @@ const useStyles = makeStyles((theme) => ({
 export default function Reader(params) {
   var classes = useStyles();
 
+  let {storyId} = useParams();
+
+  const [story, setStory] = useState();
+
+  useEffect(() => {
+    getStory(storyId, setStory);
+  }, []);
+
+  // console.log(story);
+
   return (
     <Container  className={classes.container}>
       <Typography variant='h1'>
         Reader
       </Typography>
+      <Markdown>
+        {story ? story.text : ''}
+      </Markdown>
     </Container>
   );
 }
