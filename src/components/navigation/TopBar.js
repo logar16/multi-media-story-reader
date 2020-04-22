@@ -6,6 +6,7 @@ import * as ROUTES from '../../constants/routes';
 const useStyles = makeStyles((theme) => ({
   appBar: {
     borderBottom: `2px solid ${theme.palette.divider}`,
+    marginBottom: 5,
   },
 }));
 
