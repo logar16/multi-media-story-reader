@@ -24,7 +24,6 @@ export default function Home(props) {
   }, [])
 
   const handleReadClick = (id) => {
-    console.log(id);
     props.history.push(`/reader/${id}`);
   }
   
