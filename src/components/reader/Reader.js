@@ -30,18 +30,17 @@ export default function Reader(params) {
 
   useEffect(() => {
     getStory(storyId, setStory);
-  }, []);
-
-  // console.log(story);
+  }, [storyId]);
 
   return (
     <Container  className={classes.container}>
       <Typography variant='h1'>
         Reader
       </Typography>
-      <Markdown>
+      <Markdown options={{}}>
         {story ? story.text : ''}
       </Markdown>
     </Container>
   );
 }
+

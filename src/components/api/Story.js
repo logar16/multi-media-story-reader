@@ -1,6 +1,8 @@
+import markdown_test from '../../resources/test-markdown.md'
+import {readFile} from 'fs';
 
-export function getStorySummaries(setStories) {
-    setStories(summaries);
+export function getStorySummaries(setSummaries) {
+    setSummaries(summaries);
 }
 
 export function getStory(storyId, setStory) {
@@ -25,6 +27,9 @@ const summaries = [
     ]
 
 const stories = {
+    markdown: {
+        text: "../../resources/test-markdown.md"
+    },
     maskin: {
         text: `“Torro, prepare to exit the stairwell on floor twelve,” Katch informed him as he sent Freija’s position using his drone and her personal GPS for triangulation. He also sent an approximation of the blueprint of the building to Torro.  As Torro leapt up the last five steps to floor twelve, he was able to see just how much havoc a dreadnaut could create.
         The whole floor was in shambles compared to the other floors he had seen on the way up.  Splinters from the wall frames were strewn about with a fair amount of other debris.  Old computers lay smashed upon the ground and intermingled with rotting papers and furniture.  Torro ran forward and could hear the dreadnaut crashing through another wall nearby.  “Give me a look at the blueprint with their approximate location,” he directed his AI, Keven.
